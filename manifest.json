@@ -1,0 +1,24 @@
+{
+	"author": "Mr. Lewis <lewis@experius.nl>",
+	"background": {},
+	"description": "Create copy/pastable composer patch definition for vaimo/composer-patches.",
+	"icons": {
+		"128": "images/logo.png"
+	},
+	"manifest_version": 2,
+	"name": "Github Magento 2 - create definition for composer patches",
+	"permissions": [],
+	"short_name": "m2-composer-patches",
+	"version": "1.0.0",
+	"content_scripts": [
+		{
+			"matches": ["https://github.com/*/*/commit/**", "https://github.com/*/*/pull/**"],
+			"js": [
+				"js/jquery-3.4.1.min.js",
+				"js/github-magento2-composer-patch.js"
+			],
+			"run_at": "document_idle",
+			"all_frames": true
+		}
+	]
+}
